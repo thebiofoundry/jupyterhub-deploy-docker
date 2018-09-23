@@ -58,5 +58,6 @@ notebook_image: pull singleuser/Dockerfile
 
 build: check-files network volumes
 	docker-compose build
+	docker run --rm -v jupyterhub-team-volume:/scratch ubuntu:16.04 chmod -R 777 /scratch
 
 .PHONY: network volumes check-files pull notebook_image build
